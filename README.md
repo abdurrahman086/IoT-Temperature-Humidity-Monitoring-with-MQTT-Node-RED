@@ -21,7 +21,7 @@ Penyusunan komponen pada ESP32 dilakukan sebagai berikut:
 | **VCC** | 3.3V | Catu Daya |
 | **GND** | GND | Ground |
 
-![Wiring Diagram](image_a4efbd.png)
+![Wiring Diagram](wiring.jpg)
 *Gambar 1: Tata letak komponen pada simulator Wokwi.*
 
 ---
@@ -41,7 +41,7 @@ Untuk menjalankan simulasi di Wokwi tanpa kode sumber, ikuti langkah ini di Ardu
 3.  Klik menu **Sketch** > **Export Compiled Binary**.
 4.  File `.bin` akan muncul di folder proyek Anda (biasanya di dalam folder `build`).
 
-![Export Binary](image_a4ef7f.png)
+![Export Binary]()
 *Gambar 2: Proses export binary di Arduino IDE.*
 
 ---
@@ -55,7 +55,7 @@ Sistem mengirimkan data ke topic `bdur/dht` dalam format JSON. Node-RED kemudian
 * `bdur/dht`: Data suhu & kelembapan (JSON)
 * `bdur/led`: Kontrol lampu (1=ON, 0=OFF)
 
-![Node-RED Dashboard](image_a4ef9f.png)
+![Node-RED Dashboard](node-red.jpg)
 *Gambar 3: Tampilan dashboard monitoring dan flow Node-RED.*
 
 ---
