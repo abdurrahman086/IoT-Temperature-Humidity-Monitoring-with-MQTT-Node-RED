@@ -21,7 +21,7 @@ Penyusunan komponen pada ESP32 dilakukan sebagai berikut:
 | **VCC** | 3.3V | Catu Daya |
 | **GND** | GND | Ground |
 
-![Wiring Diagram](wiring.jpg)
+![Wiring Diagram](wiring.jpg) /n
 *Tata letak komponen pada simulator Wokwi.*
 
 ---
@@ -41,7 +41,7 @@ Untuk menjalankan simulasi di Wokwi tanpa kode sumber, ikuti langkah ini di Ardu
 3.  Klik menu **Sketch** > **Export Compiled Binary**.
 4.  File `.bin` akan muncul di folder proyek Anda (biasanya di dalam folder `build`).
 
-![Export Binary]()
+![Export Binary](bin.jpg)
 *Proses export binary di Arduino IDE.*
 
 ---
