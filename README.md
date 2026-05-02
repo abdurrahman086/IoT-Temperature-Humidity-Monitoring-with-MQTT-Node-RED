@@ -9,6 +9,7 @@ Proyek ini mendemonstrasikan sistem monitoring suhu dan kelembapan menggunakan s
 * **Protokol MQTT**: Mengirimkan data dalam format string tunggal dan format JSON ke broker EMQX.
 * **Kontrol LED**: Mengendalikan status LED (ON/OFF) melalui dashboard Node-RED.
 * **Dashboard Node-RED**: Visualisasi data menggunakan gauge dan chart yang interaktif.
+
 ---
 
 ## 🛠️ Skema Wiring (Simulasi Wokwi)
@@ -21,8 +22,10 @@ Penyusunan komponen pada ESP32 dilakukan sebagai berikut:
 | **VCC** | 3.3V | Catu Daya |
 | **GND** | GND | Ground |
 
-![Wiring Diagram](wiring.jpg) /n
-*Tata letak komponen pada simulator Wokwi.*
+<figure>
+  <img src="wiring.jpg" alt="Wiring Diagram">
+  <figcaption align="center"><i>Tata letak komponen pada simulator Wokwi.</i></figcaption>
+</figure>
 
 ---
 
@@ -36,13 +39,15 @@ Untuk penjelasan mendalam mengenai langkah-langkah teknis, silakan unduh dokumen
 ## ⚙️ Cara Membuat Binary File (.bin)
 Untuk menjalankan simulasi di Wokwi tanpa kode sumber, ikuti langkah ini di Arduino IDE:
 
-1.  Buka file sketsa (`.ino`).
-2.  Pilih board: **Tools** > **Board** > **ESP32** > **ESP32 Dev Module**.
-3.  Klik menu **Sketch** > **Export Compiled Binary**.
-4.  File `.bin` akan muncul di folder proyek Anda (biasanya di dalam folder `build`).
+1. Buka file sketsa (`.ino`).
+2. Pilih board: **Tools** > **Board** > **ESP32** > **ESP32 Dev Module**.
+3. Klik menu **Sketch** > **Export Compiled Binary**.
+4. File `.bin` akan muncul di folder proyek Anda (biasanya di dalam folder `build`).
 
-![Export Binary](bin.jpg)
-*Proses export binary di Arduino IDE.*
+<figure>
+  <img src="bin.jpg" alt="Export Binary">
+  <figcaption align="center"><i>Proses export binary di Arduino IDE.</i></figcaption>
+</figure>
 
 ---
 
@@ -55,13 +60,15 @@ Sistem mengirimkan data ke topic `bdur/dht` dalam format JSON. Node-RED kemudian
 * `bdur/dht`: Data suhu & kelembapan (JSON)
 * `bdur/led`: Kontrol lampu (1=ON, 0=OFF)
 
-![Node-RED Dashboard](dashboard.jpg)
-![Flow Node-red](node-red.jpg)
-*Tampilan dashboard monitoring dan flow Node-RED.*
+<figure>
+  <img src="dashboard.jpg" alt="Node-RED Dashboard">
+  <img src="node-red.jpg" alt="Flow Node-red">
+  <figcaption align="center"><i>Tampilan dashboard monitoring dan flow Node-RED.</i></figcaption>
+</figure>
 
 ---
 
 ## 👨‍💻 Author
 **Abdurrahman**
-*   IoT Engineer & Educator
-*   Bogor, Indonesia
+* IoT Engineer & Educator
+* Bogor, Indonesia
