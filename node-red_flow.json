@@ -1,0 +1,424 @@
+[
+    {
+        "id": "30f9193c64cf0158",
+        "type": "tab",
+        "label": "ESP32_Mqtt_NodeRed",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6645efe501167ce1",
+        "type": "function",
+        "z": "30f9193c64cf0158",
+        "name": "Parsing data",
+        "func": "var temperature = msg.payload.temperature;\nvar humidity = msg.payload.humidity;\n\nreturn [\n    {payload : temperature},\n    {payload : humidity}\n];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 260,
+        "wires": [
+            [
+                "9276731c217badfa",
+                "b4570e98f2633e0c"
+            ],
+            [
+                "243c808cedc09e1a"
+            ]
+        ]
+    },
+    {
+        "id": "9276731c217badfa",
+        "type": "ui_gauge",
+        "z": "30f9193c64cf0158",
+        "name": "",
+        "group": "fc3cb7902ec21238",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "243c808cedc09e1a",
+        "type": "ui_gauge",
+        "z": "30f9193c64cf0158",
+        "name": "",
+        "group": "c0e006783a198f17",
+        "order": 1,
+        "width": 5,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 700,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "68f670bdd805e1b2",
+        "type": "ui_button",
+        "z": "30f9193c64cf0158",
+        "name": "",
+        "group": "27e7d8ec6239e9b9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ON",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 350,
+        "y": 340,
+        "wires": [
+            [
+                "7417a287e406315a"
+            ]
+        ]
+    },
+    {
+        "id": "a6855f121f96aae4",
+        "type": "ui_button",
+        "z": "30f9193c64cf0158",
+        "name": "",
+        "group": "27e7d8ec6239e9b9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "OFF",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "red",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 350,
+        "y": 380,
+        "wires": [
+            [
+                "7417a287e406315a"
+            ]
+        ]
+    },
+    {
+        "id": "32a22bc6311337b3",
+        "type": "mqtt in",
+        "z": "30f9193c64cf0158",
+        "name": "",
+        "topic": "bdur/temperature",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8880c1027b0b52bd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "02eca9a7b469cbf4"
+            ]
+        ]
+    },
+    {
+        "id": "10235ff748d6c98f",
+        "type": "mqtt in",
+        "z": "30f9193c64cf0158",
+        "name": "",
+        "topic": "bdur/humidity",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8880c1027b0b52bd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "17c48d824dfbe808"
+            ]
+        ]
+    },
+    {
+        "id": "823d05fb3e360ae6",
+        "type": "mqtt in",
+        "z": "30f9193c64cf0158",
+        "name": "",
+        "topic": "bdur/dht",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8880c1027b0b52bd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "6645efe501167ce1",
+                "e6121077950629b4"
+            ]
+        ]
+    },
+    {
+        "id": "7417a287e406315a",
+        "type": "mqtt out",
+        "z": "30f9193c64cf0158",
+        "name": "",
+        "topic": "bdur/led",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8880c1027b0b52bd",
+        "x": 540,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "02eca9a7b469cbf4",
+        "type": "debug",
+        "z": "30f9193c64cf0158",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "17c48d824dfbe808",
+        "type": "debug",
+        "z": "30f9193c64cf0158",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e6121077950629b4",
+        "type": "debug",
+        "z": "30f9193c64cf0158",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "b4570e98f2633e0c",
+        "type": "ui_gauge",
+        "z": "30f9193c64cf0158",
+        "name": "",
+        "group": "fc3cb7902ec21238",
+        "order": 2,
+        "width": 7,
+        "height": 4,
+        "gtype": "compass",
+        "title": "Temperature",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "95b067043401bfee",
+        "type": "ui_spacer",
+        "z": "30f9193c64cf0158",
+        "name": "spacer",
+        "group": "c0e006783a198f17",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "404964fb07f9586c",
+        "type": "ui_spacer",
+        "z": "30f9193c64cf0158",
+        "name": "spacer",
+        "group": "c0e006783a198f17",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d6e859da6dd2e3e5",
+        "type": "ui_spacer",
+        "z": "30f9193c64cf0158",
+        "name": "spacer",
+        "group": "c0e006783a198f17",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c87eafd4bd8e5e38",
+        "type": "ui_spacer",
+        "z": "30f9193c64cf0158",
+        "name": "spacer",
+        "group": "c0e006783a198f17",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fc3cb7902ec21238",
+        "type": "ui_group",
+        "name": "TEMPERATURE",
+        "tab": "1f798b0a0b474d4f",
+        "order": 2,
+        "disp": true,
+        "width": 13,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c0e006783a198f17",
+        "type": "ui_group",
+        "name": "HUMIDITY",
+        "tab": "1f798b0a0b474d4f",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "27e7d8ec6239e9b9",
+        "type": "ui_group",
+        "name": "LED",
+        "tab": "1f798b0a0b474d4f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8880c1027b0b52bd",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1f798b0a0b474d4f",
+        "type": "ui_tab",
+        "name": "MQTT",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "23190462b95ab36e",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
