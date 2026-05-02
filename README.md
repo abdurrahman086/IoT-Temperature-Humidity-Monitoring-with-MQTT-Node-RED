@@ -1,19 +1,18 @@
 # IoT Temperature & Humidity Monitoring with MQTT & Node-RED
 
-Proyek ini mendemonstrasikan sistem monitoring suhu dan kelembapan menggunakan sensor **DHT22** dan kontrol **LED** secara remote melalui protokol komunikasi **MQTT**. Proyek ini disimulasikan menggunakan **Wokwi** dengan metode upload program menggunakan **Binary File (.bin)**.[cite: 1, 2]
+Proyek ini mendemonstrasikan sistem monitoring suhu dan kelembapan menggunakan sensor **DHT22** dan kontrol **LED** secara remote melalui protokol komunikasi **MQTT**. Proyek ini disimulasikan menggunakan **Wokwi** dengan metode upload program menggunakan **Binary File (.bin)**.
 
 ---
 
 ## 🚀 Fitur Utama
-* **Monitoring Real-time**: Membaca data suhu dan kelembapan dari sensor DHT22.[cite: 1]
-* **Protokol MQTT**: Mengirimkan data dalam format string tunggal dan format JSON ke broker EMQX.[cite: 1]
-* **Kontrol LED**: Mengendalikan status LED (ON/OFF) melalui dashboard Node-RED.[cite: 1]
-* **Dashboard Node-RED**: Visualisasi data menggunakan gauge dan chart yang interaktif.[cite: 1]
-
+* **Monitoring Real-time**: Membaca data suhu dan kelembapan dari sensor DHT22.
+* **Protokol MQTT**: Mengirimkan data dalam format string tunggal dan format JSON ke broker EMQX.
+* **Kontrol LED**: Mengendalikan status LED (ON/OFF) melalui dashboard Node-RED.
+* **Dashboard Node-RED**: Visualisasi data menggunakan gauge dan chart yang interaktif.
 ---
 
 ## 🛠️ Skema Wiring (Simulasi Wokwi)
-Penyusunan komponen pada ESP32 dilakukan sebagai berikut:[cite: 1, 2]
+Penyusunan komponen pada ESP32 dilakukan sebagai berikut:
 
 | Komponen | Pin ESP32 | Keterangan |
 | :--- | :--- | :--- |
@@ -35,33 +34,33 @@ Untuk penjelasan mendalam mengenai langkah-langkah teknis, silakan unduh dokumen
 ---
 
 ## ⚙️ Cara Membuat Binary File (.bin)
-Untuk menjalankan simulasi di Wokwi tanpa kode sumber, ikuti langkah ini di Arduino IDE:[cite: 1, 2]
+Untuk menjalankan simulasi di Wokwi tanpa kode sumber, ikuti langkah ini di Arduino IDE:
 
 1.  Buka file sketsa (`.ino`).
 2.  Pilih board: **Tools** > **Board** > **ESP32** > **ESP32 Dev Module**.
-3.  Klik menu **Sketch** > **Export Compiled Binary**.[cite: 1, 2]
-4.  File `.bin` akan muncul di folder proyek Anda (biasanya di dalam folder `build`).[cite: 1, 2]
+3.  Klik menu **Sketch** > **Export Compiled Binary**.
+4.  File `.bin` akan muncul di folder proyek Anda (biasanya di dalam folder `build`).
 
 ![Export Binary](image_a4ef7f.png)
-*Gambar 2: Proses export binary di Arduino IDE.*[cite: 2]
+*Gambar 2: Proses export binary di Arduino IDE.*
 
 ---
 
 ## 📊 Integrasi Node-RED
-Sistem mengirimkan data ke topic `bdur/dht` dalam format JSON. Node-RED kemudian melakukan *parsing* data untuk ditampilkan pada dashboard.[cite: 1, 2]
+Sistem mengirimkan data ke topic `bdur/dht` dalam format JSON. Node-RED kemudian melakukan *parsing* data untuk ditampilkan pada dashboard.
 
 **Topic MQTT:**
-* `bdur/temperature`: Data suhu (String)[cite: 1]
-* `bdur/humidity`: Data kelembapan (String)[cite: 1]
-* `bdur/dht`: Data suhu & kelembapan (JSON)[cite: 1]
-* `bdur/led`: Kontrol lampu (1=ON, 0=OFF)[cite: 1]
+* `bdur/temperature`: Data suhu (String)
+* `bdur/humidity`: Data kelembapan (String)
+* `bdur/dht`: Data suhu & kelembapan (JSON)
+* `bdur/led`: Kontrol lampu (1=ON, 0=OFF)
 
 ![Node-RED Dashboard](image_a4ef9f.png)
-*Gambar 3: Tampilan dashboard monitoring dan flow Node-RED.*[cite: 2]
+*Gambar 3: Tampilan dashboard monitoring dan flow Node-RED.*
 
 ---
 
 ## 👨‍💻 Author
 **Abdurrahman**
 *   IoT Engineer & Educator
-*   Bogor/Sentul, Indonesia
+*   Bogor, Indonesia
