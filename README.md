@@ -23,7 +23,7 @@ Penyusunan komponen pada simulasi Wokwi menggunakan pinout berikut:
 | **GND** | GND | Ground |
 
 <figure>
-  <img src="wiring.jpg" alt="Wokwi Connection">
+  <img src="img/wiring.jpg" alt="Wokwi Connection">
   <figcaption align="center"><i>Skema rangkaian ESP32 dengan DHT22 dan LED di Wokwi.</i></figcaption>
 </figure>
 
@@ -46,7 +46,7 @@ Untuk menjalankan simulasi di Wokwi dengan metode upload binary tanpa membagikan
 5. Di Wokwi, tekan tombol **F1**, pilih **"Upload Compiled Binary (.bin) / HEX File"**, dan pilih file tersebut.
 
 <figure>
-  <img src="bin.jpg" alt="Arduino IDE Export">
+  <img src="img/bin.jpg" alt="Arduino IDE Export">
   <figcaption align="center"><i>Proses pembuatan file binary di Arduino IDE.</i></figcaption>
 </figure>
 
@@ -79,8 +79,8 @@ Sistem mengirimkan data ke topic MQTT dalam format JSON. Node-RED kemudian melak
 5.  **Akses UI**: Akses antarmuka dashboard melalui browser di alamat: [http://localhost:1880/ui](http://localhost:1880/ui).
 
 <figure>
-  <img src="dashboard.jpg" alt="Node-RED Dashboard Preview">
-  <img src="node-red.jpg" alt="Node-RED Flow Preview">
+  <img src="img/dashboard.jpg" alt="Node-RED Dashboard Preview">
+  <img src="img/node-red.jpg" alt="Node-RED Flow Preview">
   <figcaption align="center"><i>Tampilan Dashboard Monitoring dan Logika Flow pada Node-RED.</i></figcaption>
 </figure>
 
