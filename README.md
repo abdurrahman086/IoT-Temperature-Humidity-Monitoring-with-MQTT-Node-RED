@@ -87,6 +87,6 @@ Sistem mengirimkan data ke topic MQTT dalam format JSON. Node-RED kemudian melak
 ---
 
 ## 👨‍💻 Author
-**Abdurrahman**
+**Abdurrahman Bantaniy**
 *   IoT Engineer & Educator
 *   Bogor, Indonesia
